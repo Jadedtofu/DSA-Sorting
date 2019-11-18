@@ -106,14 +106,14 @@ class LinkedList {
   // just prints out the data in list
   printListData() {
     let current = this.head;
-    let listData = ''
+    let listData = '';
 
     while (current) {
       let arrow = current.next ? ' -> ' : ''
       listData += `[${current.data}] ${arrow}`
       current = current.next;
     }
-    console.log(listData)
+    console.log(listData);
   }
 }
 

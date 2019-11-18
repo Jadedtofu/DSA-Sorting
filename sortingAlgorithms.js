@@ -101,6 +101,19 @@ const splitLinkedList = (linkedList) => {
     return [left, right];
   }
 
+const mergeSortLinkedList = (linkedList) => {
+    if (linkedList.size <= 1) {
+        return linkedList;
+    }
+    let [left, right] = splitLinkedList(linkedList);
+    // linkedList.printListData();
+    // left.printListData();
+    // right.printListData();
+
+//left = mergeSortLinkedList(left)
+//right = mergeSortLinkedList(right)
+//return mergeLinkedList(left, right, linkedList);
+}
 
 const main = () => {
     let option = process.argv[2] || 1
@@ -118,6 +131,12 @@ const main = () => {
         console.log(`\nSort ${count} numbers using Quick Sort:`)
         steps = 0
         quickSort(arr)
+        break
+      case '4':
+        let myLinkedList = new LinkedList()
+        let allData = [89, 30, 25, 32, 72, 70, 51, 42, 25, 24, 53, 55, 78, 50, 13, 40, 48, 32, 26, 2]
+        allData.forEach(item => myLinkedList.insertAtLastPosition(item))
+        mergeSortLinkedList(myLinkedList)
         break
       default:
         console.log(`\nSort ${count} numbers using Bubble Sort:`)
